@@ -6,48 +6,48 @@
 
 # Logowanie
 
-- `/login/`
+- `/login/` -> Login
   - pola na login i hasło
   - guzik do zalogowania (link do dashboard)
 
 # Widok dostępności stolików
 
-- `/tables`
+- `/tables` -> Tables
   - wybór daty i godziny
   - tabela z listą rezerwacji oraz wydarzeń
     - kaźda kolumna = 1 stolik
     - kaźdy wiersz = 30min
     - ma przypominać widok w kalendarzu Google, gdzie w kolumnach zamiast dni są róźne stoliki
     - po kliknięciu rezerwacji lub eventu przechodzimy na stronę szczegółów
-- `/tables/booking/:id`
+- `/tables/booking/:id` -> Table
   - wszystkie informacje dot. rezerwacji
   - umoźliwia edycję i zapisanie zmian
-- `/tables/booking/new`
+- `/tables/booking/new` -> NewTable
   - analogicznie do powyźej, bez początkowych informacji
-- `/tables/events/:id`
+- `/tables/events/:id` -> Event
   - analigocznie do powyźej, dla eventów
-- `/tables/events/new`
+- `/tables/events/new` -> NewEvent
   - analogicznie do powyźej, dla eventów, bez początkowych informacji
 
 # Widok kelnera
 
-- `/waiter`
+- `/waiter` -> Waiter
   - tabela
     - w wierszach stoliki
     - w kolumnach róźne rodzaje inf (status, czas od ostatniej zmiany aktywności)
     - w ostatniej kolumnie dostępne akcje dla danego stolika
-- `/waiter/order/new`
+- `/waiter/order/new` -> NewOrder
   - numer stolika (edytowalny)
   - menu produktów
   - opcje wybranego produktu
   - zamówienie (zamówione produkty z opcjami i ceną)
   - kwota zamówienia
-- `/waiter/order/:id`
+- `/waiter/order/:id` -> Order
   - jak powyźsza
 
 # Widok kuchni
 
-- `/kitchen`
+- `/kitchen` -> Kitchen
   - wyświetla listę zamówień w kolejności ich złoźenia
   - lista musi zawierać nr stolika lub zamówienia zdalnego
   - pełne informacje dot. zamówionych dań
