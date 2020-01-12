@@ -1,0 +1,19 @@
+@import '../../../styles/settings.scss';
+
+.container {
+  padding: $base-size;
+  background-color: lemonchiffon;
+  margin: 60px auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 400px;
+  border: 1px solid #334455;
+  border-radius: 5px;
+}
+
+
+.input {
+  flex: 100%;
+  margin: 30px 0 20px;
+}

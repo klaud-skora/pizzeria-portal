@@ -1,0 +1,26 @@
+@import '../../../styles/settings.scss';
+
+.component {
+  padding: $base-size;
+}
+
+.tableHead {
+  background-color: lighten(#345678, 40%);
+}
+
+.links {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.link {
+  padding-right: 40px;
+  margin: 15px;
+  text-decoration: none;
+  color: #345678;
+  font-weight: 800;
+  text-transform: uppercase;
+  &:hover {
+    color: #341428;
+  }
+}
