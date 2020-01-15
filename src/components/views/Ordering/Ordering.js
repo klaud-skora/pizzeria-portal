@@ -24,12 +24,12 @@ const renderActions = status => {
       return (
         <>
           <Button>thinking</Button>
-          <Button>new order</Button>
+          <Link className={styles.link} to={process.env.PUBLIC_URL + '/ordering/order/new'}><Button>New Order</Button></Link>
         </>
       );
     case 'thinking':
       return (
-        <Button>new order</Button>
+        <Link className={styles.link} to={process.env.PUBLIC_URL + '/ordering/order/new'}><Button>New Order</Button></Link>
       );
     case 'ordered':
       return (
@@ -56,7 +56,6 @@ const Ordering = () => (
   <Paper className={styles.component}>
     <div className={styles.links}>
       <Link className={styles.link} to={process.env.PUBLIC_URL + '/ordering/order/new'}>New Order </Link>
-      <Link className={styles.link} to={process.env.PUBLIC_URL + '/ordering/order/123abc'}>Orders</Link>
     </div>
     <Table>
       <TableHead className={styles.tableHead}>
@@ -79,7 +78,8 @@ const Ordering = () => (
             <TableCell>
               {row.order && (
                 <Button to={`${process.env.PUBLIC_URL}/waiter/order/${row.order}`}>
-                  {row.order}
+
+                  <Link className={styles.link} to={process.env.PUBLIC_URL + '/ordering/order/123abc'}>{row.order}</Link>
                 </Button>
               )}
             </TableCell>

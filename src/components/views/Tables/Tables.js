@@ -11,41 +11,50 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 
 const demoContent = [
-  {id: '1', status: 'free'},
-  {id: '2', status: 'booked'},
-  {id: '3', status: 'booked'},
-  {id: '4', status: 'booked'},
-  {id: '5', status: 'free'},
-  {id: '6', status: 'free'},
-  {id: '7', status: 'free'},
+  {id: '1'},
+  {id: '2'},
+  {id: '3'},
+  {id: '4'},
+  {id: '5'},
+  {id: '6'},
+  {id: '7'},
 ];
-const renderActions = status => {
-  switch (status) {
-    case 'free':
+
+const reservationTime = [
+  {time: '12:00', table: '3'},
+  {time: '12:30'},
+  {time: '13:00'},
+  {time: '13:30'},
+  {time: '14:00'},
+  {time: '14:30', table: '5'},
+  {time: '15:00'},
+  {time: '15:30'},
+  {time: '16:00'},
+  {time: '16:30'},
+  {time: '17:00'},
+  {time: '17:30'},
+  {time: '18:00'},
+  {time: '18:30'},
+  {time: '19:00'},
+  {time: '19:30'},
+  {time: '20:00'},
+  {time: '20:30'},
+  {time: '21:00'},
+];
+const renderActions = (takenTable, table) => {
+  switch (takenTable) {
+    case (takenTable, table):
+      return (
+        <>
+          <Button className={styles.reservation}>reservation</Button>
+        </>
+      );
+    default:
       return (
         <>
           <Button>book table</Button>
         </>
       );
-    case 'booked':
-      return (
-        <Button>remove reservation</Button>
-      );
-    default:
-      return null;
-  }
-};
-
-const renderDetails = status => {
-  switch (status) {
-    case 'booked':
-      return (
-        <>
-          <Button>show details</Button>
-        </>
-      );
-    default:
-      return '------------';
   }
 };
 
@@ -64,11 +73,21 @@ const Tables = () => (
               shrink: true,
             }}
           />
+          <TextField
+            id="time"
+            label="Time"
+            type="time"
+            defaultValue="21:11:54"
+            className={styles.textField}
+            InputLabelProps={{
+              shrink: true,
+            }}
+          />
         </form>
       </div>
       <div className={styles.links}>
-        <Link className={styles.link} to={process.env.PUBLIC_URL + '/tables/booking/new'}>New Booking </Link>
-        <Link className={styles.link} to={process.env.PUBLIC_URL + '/tables/booking/123abc'}>Bookings </Link>
+        <Link className={styles.link} to={process.env.PUBLIC_URL + '/tables/booking/new'}>New Booking</Link>
+        <Link className={styles.link} to={process.env.PUBLIC_URL + '/tables/booking/123abc'}>Bookings</Link>
         <Link className={styles.link} to={process.env.PUBLIC_URL + '/tables/events/new'}>New Event </Link>
         <Link className={styles.link} to={process.env.PUBLIC_URL + '/tables/events/123abc'}>Events</Link>
       </div>
@@ -77,28 +96,32 @@ const Tables = () => (
       <TableHead className={styles.tableHead}>
         <TableRow>
           <TableCell>Table</TableCell>
-          <TableCell>Status</TableCell>
-          <TableCell>Details</TableCell>
-          <TableCell>Action</TableCell>
+          {demoContent.map(row => (
+            <TableCell key={row.id} component="th" scope="row">
+              {row.id}
+            </TableCell>
+          ))}
         </TableRow>
       </TableHead>
       <TableBody>
-        {demoContent.map(row => (
-          <TableRow key={row.id}>
-            <TableCell component="th" scope="row">
-              {row.id}
+        <TableRow>
+          <TableCell>
+            {reservationTime.map(row => (
+              <TableRow key={row.time} component="th" scope="row">
+                <Button>{row.time}</Button>
+              </TableRow>
+            ))}
+          </TableCell>
+          {demoContent.map(column => (
+            <TableCell key={column.time}>
+              {reservationTime.map(row => (
+                <TableRow key={row.time}>
+                  {renderActions(row.table, column.id)}
+                </TableRow>
+              ))}
             </TableCell>
-            <TableCell>
-              {row.status}
-            </TableCell>
-            <TableCell>
-              {renderDetails(row.status)}
-            </TableCell>
-            <TableCell>
-              {renderActions(row.status)}
-            </TableCell>
-          </TableRow>
-        ))}
+          ))}
+        </TableRow>
       </TableBody>
     </Table>
   </Paper>

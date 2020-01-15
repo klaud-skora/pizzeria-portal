@@ -3,3 +3,7 @@
 .component {
   padding: $base-size;
 }
+
+.tableHead {
+  background-color: lighten(#345678, 40%);
+}

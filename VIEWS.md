@@ -4,15 +4,15 @@
   - statystyki dzisiejszych zamówień (zdalne i lokalne)
   - lista rezerwacji i eventów zaplanowanych na dzisiaj
 
-# Logowanie
+# Logowanie *
 
-- `/login/` -> Login
+- `/login/` -> Login *
   - pola na login i hasło
   - guzik do zalogowania (link do dashboard)
 
 # Widok dostępności stolików
 
-- `/tables` -> Tables
+- `/tables` -> Tables *
   - wybór daty i godziny
   - tabela z listą rezerwacji oraz wydarzeń
     - kaźda kolumna = 1 stolik
@@ -29,23 +29,23 @@
 - `/tables/events/new` -> NewEvent
   - analogicznie do powyźej, dla eventów, bez początkowych informacji
 
-# Widok kelnera
+# Widok kelnera *
 
-- `/waiter` -> Waiter
+- `/waiter` -> Ordering *
   - tabela
     - w wierszach stoliki
     - w kolumnach róźne rodzaje inf (status, czas od ostatniej zmiany aktywności)
     - w ostatniej kolumnie dostępne akcje dla danego stolika
-- `/waiter/order/new` -> NewOrder
+- `/waiter/order/new` -> NewOrder *
   - numer stolika (edytowalny)
   - menu produktów
   - opcje wybranego produktu
   - zamówienie (zamówione produkty z opcjami i ceną)
   - kwota zamówienia
-- `/waiter/order/:id` -> Order
+- `/waiter/order/:id` -> Order *
   - jak powyźsza
 
-# Widok kuchni
+# Widok kuchni *
 
 - `/kitchen` -> Kitchen
   - wyświetla listę zamówień w kolejności ich złoźenia
