@@ -1,7 +1,5 @@
 import React from 'react';
 import styles from './Order.module.scss';
-import Table from '@material-ui/core/Table';
-import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import Select from '@material-ui/core/Select';
@@ -15,28 +13,28 @@ const Order = () => (
   <Paper className={styles.component}>
     <h2>Order order.id</h2>
     <div className={styles.order}>
-      <Table className={styles.table}>
-        {demoMenu.map(row => (
-          <TableRow className={styles.menuRow} key={row.name}>
-            <div className={styles.position}>
-              {row.name}
-              {' '}
-              {row.price}
+      <div className={styles.table}>
+        <div className={styles.body}>
+          {demoMenu.map(row => (
+            <div className={styles.menuRow} key={row.name}>
+              <div className={styles.position}>
+                {row.name}
+                {' '}
+                {row.price}
+              </div>
+              <Button className={styles.optionButtons}>edit</Button>
+              <Button className={styles.optionButtons}>delete</Button>
             </div>
-            <div className={styles.optionButtons}>
-              <Button>edit</Button>
-              <Button>delete</Button>
-            </div>
-          </TableRow>
-        ))}
-        <Button className={styles.addInMenu}>+add</Button>
-      </Table>
+          ))}
+          <Button className={styles.addInMenu}>+add</Button>
+        </div>
+      </div>
       <div className={styles.options}>
         <div className={styles.tableOption}>
           <p>Table</p>
           <Select
             label="number"
-            default="1"
+            value=""
             type="number"
           />
         </div>
@@ -44,7 +42,6 @@ const Order = () => (
           <p>Cost</p>
           <p>65$</p>
         </div>
-
       </div>
     </div>
     <div className={styles.foot}>

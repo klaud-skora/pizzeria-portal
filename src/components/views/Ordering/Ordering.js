@@ -78,7 +78,6 @@ const Ordering = () => (
             <TableCell>
               {row.order && (
                 <Button to={`${process.env.PUBLIC_URL}/waiter/order/${row.order}`}>
-
                   <Link className={styles.link} to={process.env.PUBLIC_URL + '/ordering/order/123abc'}>{row.order}</Link>
                 </Button>
               )}

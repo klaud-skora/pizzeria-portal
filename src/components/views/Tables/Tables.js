@@ -21,25 +21,25 @@ const demoContent = [
 ];
 
 const reservationTime = [
-  {time: '12:00', table: '3'},
-  {time: '12:30'},
-  {time: '13:00'},
-  {time: '13:30'},
-  {time: '14:00'},
-  {time: '14:30', table: '5'},
-  {time: '15:00'},
-  {time: '15:30'},
-  {time: '16:00'},
-  {time: '16:30'},
-  {time: '17:00'},
-  {time: '17:30'},
-  {time: '18:00'},
-  {time: '18:30'},
-  {time: '19:00'},
-  {time: '19:30'},
-  {time: '20:00'},
-  {time: '20:30'},
-  {time: '21:00'},
+  {id: '1', time: '12:00', table: '3'},
+  {id: '2', time: '12:30'},
+  {id: '3', time: '13:00'},
+  {id: '4', time: '13:30'},
+  {id: '5', time: '14:00'},
+  {id: '6', time: '14:30', table: '5'},
+  {id: '7', time: '15:00'},
+  {id: '8', time: '15:30'},
+  {id: '9', time: '16:00'},
+  {id: '10', time: '16:30'},
+  {id: '11', time: '17:00'},
+  {id: '12', time: '17:30'},
+  {id: '13', time: '18:00'},
+  {id: '14', time: '18:30'},
+  {id: '15', time: '19:00'},
+  {id: '16', time: '19:30'},
+  {id: '17', time: '20:00'},
+  {id: '18', time: '20:30'},
+  {id: '19', time: '21:00'},
 ];
 const renderActions = (takenTable, table) => {
   switch (takenTable) {
@@ -97,31 +97,25 @@ const Tables = () => (
         <TableRow>
           <TableCell>Table</TableCell>
           {demoContent.map(row => (
-            <TableCell key={row.id} component="th" scope="row">
+            <TableCell className={styles.timeCell} key={row.id} component="th" scope="cell">
               {row.id}
             </TableCell>
           ))}
         </TableRow>
       </TableHead>
       <TableBody>
-        <TableRow>
-          <TableCell>
-            {reservationTime.map(row => (
-              <TableRow key={row.time} component="th" scope="row">
-                <Button>{row.time}</Button>
-              </TableRow>
-            ))}
-          </TableCell>
-          {demoContent.map(column => (
-            <TableCell key={column.time}>
-              {reservationTime.map(row => (
-                <TableRow key={row.time}>
-                  {renderActions(row.table, column.id)}
-                </TableRow>
-              ))}
+        {reservationTime.map(row => (
+          <TableRow key={row.id}>
+            <TableCell>
+              {row.time}
             </TableCell>
-          ))}
-        </TableRow>
+            {demoContent.map(column => (
+              <TableCell key={column.id}>
+                {renderActions(row.table, column.id)}
+              </TableCell>
+            ))}
+          </TableRow>
+        ))}
       </TableBody>
     </Table>
   </Paper>

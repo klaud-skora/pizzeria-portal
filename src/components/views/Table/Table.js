@@ -1,11 +1,13 @@
 import React from 'react';
-import styles from './Table.scss';
+import styles from './Table.module.scss';
 
-const Table = id => (
-  <div className={styles.component}>
-    <h2>Table view</h2>
-    <h5>{id}</h5>
-  </div>
-);
+const Table = () => {
+  //console.log('elo');
+  return (
+    <div className={styles.component}>
+      <h2>Tabldfghj</h2>
+    </div>
+  );
+};
 
 export default Table;
