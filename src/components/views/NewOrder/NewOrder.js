@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './NewOrder.module.scss';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
-import Select from '@material-ui/core/Select';
+import TextField from '@material-ui/core/TextField';
 
 const demoMenu = [
   {name: 'pizza margheritta', price: '5$'},
@@ -32,11 +32,14 @@ const NewOrder = () => (
       <div className={styles.options}>
         <div className={styles.tableOption}>
           <p>Table</p>
-          <Select
-            label="number"
-            default="1"
+          <TextField
+            id="number"
             type="number"
-            value=''
+            defaultValue="1"
+            className={styles.textField}
+            InputLabelProps={{
+              shrink: true,
+            }}
           />
         </div>
         <div className={styles.cost}>

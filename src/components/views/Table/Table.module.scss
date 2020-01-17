@@ -3,3 +3,13 @@
 .component {
   padding: $base-size;
 }
+
+.tableHead {
+  background-color: lighten(#345678, 40%);
+}
+
+.foot {
+  margin: 20px 40px;
+  display: flex;
+  justify-content: space-around;
+}

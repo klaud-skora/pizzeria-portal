@@ -46,13 +46,13 @@ const renderActions = (takenTable, table) => {
     case (takenTable, table):
       return (
         <>
-          <Button className={styles.reservation}>reservation</Button>
+          <Link className={styles.buttonLink} to={process.env.PUBLIC_URL + '/tables/booking/123abc'}><Button className={styles.reservation}>reservation</Button></Link>
         </>
       );
     default:
       return (
         <>
-          <Button>book table</Button>
+          <Link className={styles.buttonLink} to={process.env.PUBLIC_URL + '/tables/booking/new'}><Button>book table</Button></Link>
         </>
       );
   }
@@ -87,7 +87,6 @@ const Tables = () => (
       </div>
       <div className={styles.links}>
         <Link className={styles.link} to={process.env.PUBLIC_URL + '/tables/booking/new'}>New Booking</Link>
-        <Link className={styles.link} to={process.env.PUBLIC_URL + '/tables/booking/123abc'}>Bookings</Link>
         <Link className={styles.link} to={process.env.PUBLIC_URL + '/tables/events/new'}>New Event </Link>
         <Link className={styles.link} to={process.env.PUBLIC_URL + '/tables/events/123abc'}>Events</Link>
       </div>

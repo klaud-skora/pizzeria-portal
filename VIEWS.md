@@ -19,10 +19,10 @@
     - kaźdy wiersz = 30min
     - ma przypominać widok w kalendarzu Google, gdzie w kolumnach zamiast dni są róźne stoliki
     - po kliknięciu rezerwacji lub eventu przechodzimy na stronę szczegółów
-- `/tables/booking/:id` -> Table
+- `/tables/booking/:id` -> Table *
   - wszystkie informacje dot. rezerwacji
   - umoźliwia edycję i zapisanie zmian
-- `/tables/booking/new` -> NewTable
+- `/tables/booking/new` -> NewTable *
   - analogicznie do powyźej, bez początkowych informacji
 - `/tables/events/:id` -> Event
   - analigocznie do powyźej, dla eventów

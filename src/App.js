@@ -4,7 +4,7 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import Homepage from './components/views/Homepage/Homepage';
 import Login from './components/views/Login/Login';
 import Tables from './components/views/Tables/Tables';
-import Table from './components/views/Table/Table';
+import Reservation from './components/views/Table/Table';
 import NewTable from './components/views/NewTable/NewTable';
 import Event from './components/views/Event/Event';
 import NewEvent from './components/views/NewEvent/NewEvent';
@@ -35,7 +35,7 @@ function App() {
               <Route exact path={process.env.PUBLIC_URL + '/tables'} component={Tables}/>
               <Route exact path={process.env.PUBLIC_URL + '/tables/booking/new'} component={NewTable}/>
               <Route exact path={process.env.PUBLIC_URL + '/tables/events/new'} component={NewEvent}/>
-              <Route exact path={process.env.PUBLIC_URL + '/tables/booking/:id'} component={Table}/>
+              <Route exact path={process.env.PUBLIC_URL + '/tables/booking/:id'} component={Reservation}/>
               <Route exact path={process.env.PUBLIC_URL + '/tables/events/:id'} component={Event}/>
               <Route exact path={process.env.PUBLIC_URL + '/ordering'} component={Ordering}/>
               <Route exact path={process.env.PUBLIC_URL + '/ordering/order/new'} component={NewOrder}/>
