@@ -23,8 +23,8 @@ const demoContent = [
 const reservationTime = [
   {id: '1', time: '12:00', table: '3'},
   {id: '2', time: '12:30'},
-  {id: '3', time: '13:00'},
-  {id: '4', time: '13:30'},
+  {id: '3', time: '13:00', table: '4', date: 'everyday', event: 'buisness lunch'},
+  {id: '4', time: '13:30', table: '4', date: 'everyday', event: 'buisness lunch'},
   {id: '5', time: '14:00'},
   {id: '6', time: '14:30', table: '5'},
   {id: '7', time: '15:00'},
@@ -41,12 +41,19 @@ const reservationTime = [
   {id: '18', time: '20:30'},
   {id: '19', time: '21:00'},
 ];
-const renderActions = (takenTable, table) => {
+const renderActions = (takenTable, table, event) => {
+  /*  generate proper button in table of booking and ordering*/
+  let reservation;
   switch (takenTable) {
     case (takenTable, table):
+      if (event) {
+        reservation = <Link className={styles.buttonLink} to={process.env.PUBLIC_URL + '/tables/events/123abc'}><Button className={styles.event}>event</Button></Link>;
+      } else {
+        reservation = <Link className={styles.buttonLink} to={process.env.PUBLIC_URL + '/tables/booking/123abc'}><Button className={styles.reservation}>reservation</Button></Link>;
+      }
       return (
         <>
-          <Link className={styles.buttonLink} to={process.env.PUBLIC_URL + '/tables/booking/123abc'}><Button className={styles.reservation}>reservation</Button></Link>
+          {reservation}
         </>
       );
     default:
@@ -88,7 +95,6 @@ const Tables = () => (
       <div className={styles.links}>
         <Link className={styles.link} to={process.env.PUBLIC_URL + '/tables/booking/new'}>New Booking</Link>
         <Link className={styles.link} to={process.env.PUBLIC_URL + '/tables/events/new'}>New Event </Link>
-        <Link className={styles.link} to={process.env.PUBLIC_URL + '/tables/events/123abc'}>Events</Link>
       </div>
     </div>
     <Table>
@@ -109,8 +115,8 @@ const Tables = () => (
               {row.time}
             </TableCell>
             {demoContent.map(column => (
-              <TableCell key={column.id}>
-                {renderActions(row.table, column.id)}
+              <TableCell className={styles.cell} key={column.id}>
+                {renderActions(row.table, column.id, row.event)}
               </TableCell>
             ))}
           </TableRow>

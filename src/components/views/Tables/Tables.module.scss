@@ -39,7 +39,15 @@
   background-color: lighten(#345678, 40%);
 }
 
+.event {
+  background-color: lighten(#345678, 10%);
+}
+
 .buttonLink {
   text-decoration: none;
+}
+
+.cell {
+  text-align: center;
 }
 

@@ -9,6 +9,7 @@ import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
 
 const NewTable = () => (
   <Paper className={styles.component}>
@@ -32,7 +33,15 @@ const NewTable = () => (
             <Select
               id="select-table"
               value=""
-            />
+            >
+              <MenuItem>1</MenuItem>
+              <MenuItem>2</MenuItem>
+              <MenuItem>3</MenuItem>
+              <MenuItem>4</MenuItem>
+              <MenuItem>5</MenuItem>
+              <MenuItem>6</MenuItem>
+              <MenuItem>7</MenuItem>
+            </Select>
           </TableCell>
           <TableCell>
             <Select
