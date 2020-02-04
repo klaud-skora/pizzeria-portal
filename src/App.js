@@ -8,7 +8,7 @@ import Reservation from './components/views/Table/Table';
 import NewTable from './components/views/NewTable/NewTable';
 import Event from './components/views/Event/Event';
 import NewEvent from './components/views/NewEvent/NewEvent';
-import Ordering from './components/views/Ordering/Ordering';
+import Ordering from './components/views/Ordering/OrderingContainer';
 import NewOrder from './components/views/NewOrder/NewOrder';
 import Order from './components/views/Order/Order';
 import Kitchen from './components/views/Kitchen/Kitchen';

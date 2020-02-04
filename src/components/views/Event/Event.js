@@ -32,43 +32,46 @@ const Event = () => (
             <Select
               id="select-table"
               displayEmpty
+              value={4}
             >
-              <MenuItem>1</MenuItem>
-              <MenuItem>2</MenuItem>
-              <MenuItem>3</MenuItem>
-              <MenuItem>4</MenuItem>
-              <MenuItem>5</MenuItem>
-              <MenuItem>6</MenuItem>
-              <MenuItem>7</MenuItem>
+              <MenuItem value={1}>1</MenuItem>
+              <MenuItem value={2}>2</MenuItem>
+              <MenuItem value={3}>3</MenuItem>
+              <MenuItem value={4}>4</MenuItem>
+              <MenuItem value={5}>5</MenuItem>
+              <MenuItem value={6}>6</MenuItem>
+              <MenuItem value={7}>7</MenuItem>
             </Select>
           </TableCell>
           <TableCell>
             <Select
               id="select-amount"
               displayEmpty
+              value={2}
             >
-              <MenuItem>1</MenuItem>
-              <MenuItem>2</MenuItem>
-              <MenuItem>3</MenuItem>
-              <MenuItem>4</MenuItem>
-              <MenuItem>5</MenuItem>
-              <MenuItem>6</MenuItem>
-              <MenuItem>7</MenuItem>
-              <MenuItem>8</MenuItem>
+              <MenuItem value={1}>1</MenuItem>
+              <MenuItem value={2}>2</MenuItem>
+              <MenuItem value={3}>3</MenuItem>
+              <MenuItem value={4}>4</MenuItem>
+              <MenuItem value={5}>5</MenuItem>
+              <MenuItem value={6}>6</MenuItem>
+              <MenuItem value={7}>7</MenuItem>
+              <MenuItem value={8}>8</MenuItem>
             </Select>
           </TableCell>
           <TableCell>
             <Select
               id="select-day"
               displayEmpty
+              value={'Monday'}
             >
-              <MenuItem>Monday</MenuItem>
-              <MenuItem>Tuesday</MenuItem>
-              <MenuItem>Wednesday</MenuItem>
-              <MenuItem>Thursday</MenuItem>
-              <MenuItem>Friday</MenuItem>
-              <MenuItem>Saturday</MenuItem>
-              <MenuItem>Sunday</MenuItem>
+              <MenuItem value={'Monday'}>Monday</MenuItem>
+              <MenuItem value={'Tuesday'}>Tuesday</MenuItem>
+              <MenuItem value={'Wednesday'}>Wednesday</MenuItem>
+              <MenuItem value={'Thursday'}>Thursday</MenuItem>
+              <MenuItem value={'Friday'}>Friday</MenuItem>
+              <MenuItem value={'Saturday'}>Saturday</MenuItem>
+              <MenuItem value={'Sunday'}>Sunday</MenuItem>
             </Select>
           </TableCell>
           <TableCell>

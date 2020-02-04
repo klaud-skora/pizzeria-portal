@@ -2,7 +2,8 @@ import React from 'react';
 import styles from './Order.module.scss';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
 
 const demoMenu = [
   {name: 'pizza margheritta', price: '5$'},
@@ -32,15 +33,19 @@ const Order = () => (
       <div className={styles.options}>
         <div className={styles.tableOption}>
           <p>Table</p>
-          <TextField
-            id="number"
-            type="number"
-            defaultValue="1"
-            className={styles.textField}
-            InputLabelProps={{
-              shrink: true,
-            }}
-          />
+          <Select
+            id="select-table"
+            displayEmpty
+            value={1}
+          >
+            <MenuItem value={1}>1</MenuItem>
+            <MenuItem value={2}>2</MenuItem>
+            <MenuItem value={3}>3</MenuItem>
+            <MenuItem value={4}>4</MenuItem>
+            <MenuItem value={5}>5</MenuItem>
+            <MenuItem value={6}>6</MenuItem>
+            <MenuItem value={7}>7</MenuItem>
+          </Select>
         </div>
         <div className={styles.cost}>
           <p>Cost</p>
