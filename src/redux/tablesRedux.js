@@ -23,9 +23,8 @@ export const updateStatus = (id, status) => ({ id, status, type: UPDATE_STATUS})
 
 /* thunk creators */
 export const fetchFromAPI = () => {
-  return (dispatch, getState) => {
+  return (dispatch) => {
     dispatch(fetchStarted());
-    getState(fetchStarted());
 
     Axios
       .get(`${api.url}/${api.tables}`)
@@ -39,9 +38,8 @@ export const fetchFromAPI = () => {
 };
 
 export const updateFetch = (tableId, tableStatus) => {
-  return (dispatch, getState) => {
+  return (dispatch) => {
     dispatch(updateStatus(tableId, tableStatus));
-    getState(tableStatus);
 
     Axios
       .get(`${api.url}/${api.tables}`)
@@ -90,7 +88,7 @@ export default function reducer(statePart = [], action = {}) {
         ...statePart,
         loading: {
           active: false,
-          error: action.payload,
+          error: false,
         },
         data: action.payload,
       };

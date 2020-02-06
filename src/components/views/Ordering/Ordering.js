@@ -17,8 +17,8 @@ class Ordering extends React.Component {
       active: PropTypes.bool,
       error: PropTypes.oneOfType([PropTypes.bool,PropTypes.string]),
     }),
-    tables: PropTypes.array,
-    updateStatus: PropTypes.func,
+    tables: PropTypes.oneOfType([PropTypes.object,PropTypes.array]),
+    fetchStatus: PropTypes.func,
   }
 
   componentDidMount() {
@@ -27,12 +27,12 @@ class Ordering extends React.Component {
   }
 
   renderActions (tableId, status) {
-    const { updateStatus } = this.props;
+    const { fetchStatus } = this.props;
     switch (status) {
       case 'free':
         return (
           <>
-            <Button onClick={() => updateStatus(tableId, status='thinking')} >thinking</Button>
+            <Button onClick={() => fetchStatus(tableId, status='thinking')} >thinking</Button>
             <Link className={styles.link} to={process.env.PUBLIC_URL + '/ordering/order/new'}><Button>New Order</Button></Link>
           </>
         );
