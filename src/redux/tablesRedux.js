@@ -39,12 +39,12 @@ export const fetchFromAPI = () => {
 
 export const updateFetch = (tableId, tableStatus) => {
   return (dispatch) => {
-    dispatch(updateStatus(tableId, tableStatus));
+    dispatch(fetchStarted());
 
     Axios
       .get(`${api.url}/${api.tables}`)
-      .then(res => {
-        dispatch(fetchSuccess(res.data));
+      .then( () => {
+        dispatch(updateStatus(tableId, tableStatus));
       })
       .catch(err => {
         dispatch(fetchError(err.message || true));
@@ -90,7 +90,7 @@ export default function reducer(statePart = [], action = {}) {
           active: false,
           error: false,
         },
-        data: action.payload,
+        data: statePart.data.map (order => order.id === action.id ? {...order, status: action.status } : order ),
       };
     }
     default:

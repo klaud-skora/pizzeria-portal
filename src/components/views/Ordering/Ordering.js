@@ -42,19 +42,19 @@ class Ordering extends React.Component {
         );
       case 'ordered':
         return (
-          <Button>prepared</Button>
+          <Button onClick={() => fetchStatus(tableId, status='prepared')}>prepared</Button>
         );
       case 'prepared':
         return (
-          <Button>delivered</Button>
+          <Button onClick={() => fetchStatus(tableId, status='delivered')}>delivered</Button>
         );
       case 'delivered':
         return (
-          <Button>paid</Button>
+          <Button onClick={() => fetchStatus(tableId, status='paid')}>paid</Button>
         );
       case 'paid':
         return (
-          <Button>free</Button>
+          <Button onClick={() => fetchStatus(tableId, status='free')}>free</Button>
         );
       default:
         return null;
