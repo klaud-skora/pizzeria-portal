@@ -32,7 +32,7 @@ class Ordering extends React.Component {
       case 'free':
         return (
           <>
-            <Button onClick={() => fetchStatus(tableId, status='thinking')} >thinking</Button>
+            <Button onClick={() => fetchStatus(tableId, 'thinking')} >thinking</Button>
             <Link className={styles.link} to={process.env.PUBLIC_URL + '/ordering/order/new'}><Button>New Order</Button></Link>
           </>
         );
@@ -42,19 +42,19 @@ class Ordering extends React.Component {
         );
       case 'ordered':
         return (
-          <Button onClick={() => fetchStatus(tableId, status='prepared')}>prepared</Button>
+          <Button onClick={() => fetchStatus(tableId, 'prepared')}>prepared</Button>
         );
       case 'prepared':
         return (
-          <Button onClick={() => fetchStatus(tableId, status='delivered')}>delivered</Button>
+          <Button onClick={() => fetchStatus(tableId, 'delivered')}>delivered</Button>
         );
       case 'delivered':
         return (
-          <Button onClick={() => fetchStatus(tableId, status='paid')}>paid</Button>
+          <Button onClick={() => fetchStatus(tableId, 'paid')}>paid</Button>
         );
       case 'paid':
         return (
-          <Button onClick={() => fetchStatus(tableId, status='free')}>free</Button>
+          <Button onClick={() => fetchStatus(tableId, 'free')}>free</Button>
         );
       default:
         return null;
